@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://mainEdit.caption"
+        focusComponent="form"
+        messagesPack="com.company.jnjrepository.web.screens.main">
+    <data>
+        <instance id="mainDc"
+                  class="com.company.jnjrepository.entity.Main">
+            <view extends="_local"/>
+            <loader/>
+        </instance>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="editActions" spacing="true">
+        <form id="form" dataContainer="mainDc">
+            <column width="350px">
+                <textField id="apiField" property="api"/>
+                <textArea id="descriptionField" property="description" rows="5"/>
+                <textField id="ownerField" property="owner"/>
+                <textField id="departmentField" property="department"/>
+                <textField id="revisionField" property="revision"/>
+            </column>
+        </form>
+        <hbox id="editActions" spacing="true">
+            <button action="windowCommitAndClose"/>
+            <button action="windowClose"/>
+        </hbox>
+    </layout>
+</window>
